@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.Json;
@@ -25,7 +26,7 @@ namespace ContosoCrafts.WebSite.Services
                 new JsonSerializerOptions
                 {
                     PropertyNameCaseInsensitive = true
-                });
+                }) ?? Array.Empty<Product>();
         }
 
         public void AddRating(string productId, int rating)
